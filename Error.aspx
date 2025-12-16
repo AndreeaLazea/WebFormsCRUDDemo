@@ -32,9 +32,9 @@
     <form id="form1" runat="server">
         <div class="error-container">
             <div class="error-icon">!</div>
-            <h1 class="text-danger">Oops! Something went wrong</h1>
+            <h1 class="text-danger">Error</h1>
             <p class="lead text-muted my-4">
-                We're sorry, but an error has occurred. Please try again or contact support if the problem persists.
+                An error has occurred. Please try again.
             </p>
             <a href="Default.aspx" class="btn btn-primary">Go to Home</a>
             <a href="Pages/DemoItems.aspx" class="btn btn-outline-secondary">Go to Demo Items</a>

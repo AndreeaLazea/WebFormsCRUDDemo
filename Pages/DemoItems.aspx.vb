@@ -1,18 +1,11 @@
 Imports System.Data
 Imports System.Web.UI.WebControls
 
-''' <summary>
-''' Code-behind for DemoItems.aspx
-''' Handles GridView CRUD operations and form events
-''' </summary>
 Partial Class DemoItems
     Inherits System.Web.UI.Page
 
 #Region "Page Events"
 
-    ''' <summary>
-    ''' Page Load event - Binds data on initial load
-    ''' </summary>
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
             BindGrid()
@@ -23,9 +16,6 @@ Partial Class DemoItems
 
 #Region "Data Binding"
 
-    ''' <summary>
-    ''' Binds the GridView with data from the BLL
-    ''' </summary>
     Private Sub BindGrid()
         Try
             Dim items As List(Of DemoItem) = DemoItemBL.GetAllItems()
@@ -40,9 +30,6 @@ Partial Class DemoItems
 
 #Region "Button Events"
 
-    ''' <summary>
-    ''' Save button click - Handles both Insert and Update operations
-    ''' </summary>
     Protected Sub btnSave_Click(sender As Object, e As EventArgs)
         If Not Page.IsValid Then
             Return
@@ -84,9 +71,6 @@ Partial Class DemoItems
         End Try
     End Sub
 
-    ''' <summary>
-    ''' Cancel button click - Clears the form
-    ''' </summary>
     Protected Sub btnCancel_Click(sender As Object, e As EventArgs)
         ClearForm()
     End Sub
@@ -95,27 +79,18 @@ Partial Class DemoItems
 
 #Region "GridView Events"
 
-    ''' <summary>
-    ''' GridView RowEditing event - Switches to edit mode
-    ''' </summary>
     Protected Sub gvItems_RowEditing(sender As Object, e As GridViewEditEventArgs)
         gvItems.EditIndex = e.NewEditIndex
         BindGrid()
         HideMessages()
     End Sub
 
-    ''' <summary>
-    ''' GridView RowCancelingEdit event - Cancels edit mode
-    ''' </summary>
     Protected Sub gvItems_RowCancelingEdit(sender As Object, e As GridViewCancelEditEventArgs)
         gvItems.EditIndex = -1
         BindGrid()
         HideMessages()
     End Sub
 
-    ''' <summary>
-    ''' GridView RowUpdating event - Updates an item inline
-    ''' </summary>
     Protected Sub gvItems_RowUpdating(sender As Object, e As GridViewUpdateEventArgs)
         Try
             Dim row As GridViewRow = gvItems.Rows(e.RowIndex)
@@ -143,9 +118,6 @@ Partial Class DemoItems
         End Try
     End Sub
 
-    ''' <summary>
-    ''' GridView RowDeleting event - Deletes an item
-    ''' </summary>
     Protected Sub gvItems_RowDeleting(sender As Object, e As GridViewDeleteEventArgs)
         Try
             Dim itemId As Integer = Convert.ToInt32(gvItems.DataKeys(e.RowIndex).Value)
@@ -168,9 +140,6 @@ Partial Class DemoItems
 
 #Region "Validation"
 
-    ''' <summary>
-    ''' Server-side validation for title length
-    ''' </summary>
     Protected Sub ValidateTitleLength(source As Object, args As ServerValidateEventArgs)
         If String.IsNullOrWhiteSpace(args.Value) Then
             args.IsValid = False
@@ -183,9 +152,6 @@ Partial Class DemoItems
 
 #Region "Helper Methods"
 
-    ''' <summary>
-    ''' Clears the form and resets to insert mode
-    ''' </summary>
     Private Sub ClearForm()
         txtTitle.Text = String.Empty
         txtDescription.Text = String.Empty
@@ -196,27 +162,18 @@ Partial Class DemoItems
         HideMessages()
     End Sub
 
-    ''' <summary>
-    ''' Displays a success message
-    ''' </summary>
     Private Sub ShowSuccess(message As String)
         pnlSuccess.Visible = True
         lblSuccess.Text = message
         pnlError.Visible = False
     End Sub
 
-    ''' <summary>
-    ''' Displays an error message
-    ''' </summary>
     Private Sub ShowError(message As String)
         pnlError.Visible = True
         lblError.Text = message
         pnlSuccess.Visible = False
     End Sub
 
-    ''' <summary>
-    ''' Hides all messages
-    ''' </summary>
     Private Sub HideMessages()
         pnlSuccess.Visible = False
         pnlError.Visible = False

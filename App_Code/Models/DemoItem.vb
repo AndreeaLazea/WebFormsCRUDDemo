@@ -1,8 +1,5 @@
 Imports Microsoft.VisualBasic
 
-''' <summary>
-''' Model class representing a DemoItem entity
-''' </summary>
 Public Class DemoItem
     Public Property ItemID As Integer
     Public Property Title As String

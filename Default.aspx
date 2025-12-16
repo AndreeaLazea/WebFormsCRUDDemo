@@ -34,22 +34,22 @@
     <form id="form1" runat="server">
         <div class="welcome-card">
             <div class="welcome-icon">→</div>
-            <h1 class="mb-4">Welcome to Demo CRUD Application</h1>
+            <h1 class="mb-4">Demo CRUD Application</h1>
             <p class="lead text-muted mb-4">
-                A clean WebForms demo with proper DAL/BLL architecture
+                WebForms demo with three-tier architecture
             </p>
             <a href="Pages/DemoItems.aspx" class="btn btn-primary btn-lg">
                 Go to Demo Items →
             </a>
             <hr class="my-4" />
             <div class="text-start">
-                <h5>Features:</h5>
+                <h5>Features</h5>
                 <ul class="list-unstyled">
-                    <li>• Full CRUD Operations</li>
-                    <li>• DAL/BLL Separation</li>
-                    <li>• Server & Client Validation</li>
-                    <li>• Bootstrap 5 UI</li>
-                    <li>• Parameterized SQL Queries</li>
+                    <li>• CRUD Operations</li>
+                    <li>• DAL/BLL/UI Separation</li>
+                    <li>• Client & Server Validation</li>
+                    <li>• Bootstrap 5</li>
+                    <li>• Parameterized SQL</li>
                 </ul>
             </div>
         </div>

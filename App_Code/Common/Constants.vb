@@ -13,6 +13,10 @@ Public Class Constants
     Public Const ERROR_TITLE_TOO_LONG As String = "Title cannot exceed 200 characters"
     Public Const ERROR_DESCRIPTION_TOO_LONG As String = "Description cannot exceed 1000 characters"
     Public Const ERROR_INVALID_ID As String = "Invalid Item ID"
+    Public Const ERROR_LOAD_FAILED As String = "Failed to load items"
+    Public Const ERROR_INSERT_FAILED As String = "Failed to insert item"
+    Public Const ERROR_UPDATE_FAILED As String = "Failed to update item"
+    Public Const ERROR_DELETE_FAILED As String = "Failed to delete item"
 
     ' Success Messages
     Public Const SUCCESS_ITEM_ADDED As String = "Item added successfully!"
