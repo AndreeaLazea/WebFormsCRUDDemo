@@ -72,3 +72,7 @@ $RECYCLE.BIN/
 # Node modules (if using any front-end tools)
 node_modules/
 
+# Personal instruction files (not part of submission)
+PUSH_TO_GITHUB.md
+GITHUB_SUBMISSION.md
+
